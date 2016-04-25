@@ -160,14 +160,14 @@ footer {
     margin: 20px 0 30px; }
 
 .mapDiv {
-  width: 100%;
-  height: 300px;
-  margin: 20px 0 0; }
+  margin: 20px 0 0;
+  float: left;
+  width: 30%;
+  height: 200px;
+  display: none; }
   @media screen and (min-width: 650px) {
     .mapDiv {
-      float: left;
-      width: 30%;
-      height: 200px; } }
+      display: block; } }
 
 .clearfix {
   overflow: hidden;

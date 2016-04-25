@@ -1,0 +1,11 @@
+.mapDiv {
+  margin: 20px 0 0;
+  float: left;
+  width: 30%;
+  height: 200px;
+  display: none;
+
+  @media screen and (min-width: 650px) {
+    display: block;
+  }
+}

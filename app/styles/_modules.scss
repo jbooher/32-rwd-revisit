@@ -4,15 +4,4 @@
 @import "./modules/sidebar.scss";
 @import "./modules/photos.scss";
 @import "./modules/footer.scss";
-
-.mapDiv {
-  width: 100%;
-  height: 300px;
-  margin: 20px 0 0;
-
-  @media screen and (min-width: 650px) {
-    float: left;
-    width: 30%;
-    height: 200px;
-  }
-}
+@import "./modules/map.scss";
