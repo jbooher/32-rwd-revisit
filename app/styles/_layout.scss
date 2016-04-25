@@ -1,0 +1,15 @@
+body {
+  background-image: url(../assets/images/background.jpg);
+  background-position: top center;
+  font-family: Helvetica;
+
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+
+  @media screen and (min-width: 1024px) {
+    max-width: 1024px;
+  }
+}

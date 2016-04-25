@@ -2,11 +2,144 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Responsive Web Design Revisit - Assignment 32</title>
+    <script src="https://maps.googleapis.com/maps/api/js" async defer></script>
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
 
+    <div class="container">
+      <header>
+        <div class="top-header">
+          <h1>Adaptive Design</h1>
+          <input type="text" placeholder="Search">
+        </div>
+        <h2>With Media Queries</h2>
+      </header>
 
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>MDN</li>
+          <li>Stack Overflow</li>
+          <li>Google</li>
+        </ul>
+        <input type="text" placeholder="Search">
+      </nav>
+
+      <div class="post clearfix">
+        <div class="container">
+          <h2 class="post--title">Example post title</h2>
+          <h3 class="post--info">
+            <span class="post--info-date">April 8, 2016</span>
+            <span class="post--info-seperator"> in </span>
+            <a href="#" class="post--info-category">Example Category</a>
+          </h3>
+          <img class="post--image" src="./assets/images/post-image.jpg">
+          <div class="post--content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente hic id temporibus optio perferendis amet architecto aperiam animi totam, saepe praesentium facilis illum possimus dolorum deleniti alias natus velit quasi.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat at placeat, deserunt nisi eaque, aperiam modi perferendis, natus aliquid quos voluptatem laudantium repudiandae quia assumenda dicta asperiores velit, in similique.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias et atque ipsum non quam totam nam assumenda, at, nostrum reprehenderit! Odio in saepe odit, quos cum totam omnis aperiam eum.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar clearfix">
+        <div class="container">
+          <h3 class="sidebar--title">
+            Sidebar
+          </h3>
+          <ul class="sidebar--options">
+            <li class="sidebar--option">
+              <a href="#">CSS</a>
+              <span> (3)</span>
+            </li>
+            <li class="sidebar--option">
+              <a href="#">Angular</a>
+              <span> (23)</span>
+            </li>
+            <li class="sidebar--option">
+              <a href="#">Javascript</a>
+              <span> (18)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="photos clearfix">
+        <div class="container">
+          <h3 class="photos--title">
+            Photos
+          </h3>
+          <ul class="photos--gallery">
+            <li class="photos--photo">
+              <img src="./assets/images/sidebar_1.jpg">
+            </li>
+            <li class="photos--photo">
+              <img src="./assets/images/sidebar_2.jpg">
+            </li>
+            <li class="photos--photo">
+              <img src="./assets/images/sidebar_3.jpg">
+            </li>
+            <li class="photos--photo">
+              <img src="./assets/images/sidebar_4.jpg">
+            </li>
+            <li class="photos--photo">
+              <img src="./assets/images/sidebar_5.jpg">
+            </li>
+            <li class="photos--photo">
+              <img src="./assets/images/sidebar_6.jpg">
+            </li>
+            <li class="photos--photo">
+              <img src="./assets/images/sidebar_7.jpg">
+            </li>
+            <li class="photos--photo">
+              <img src="./assets/images/sidebar_8.jpg">
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mapDiv"></div>
+
+      <footer>
+        <div class="container">
+          <span>All Rights Reserved. &copy; 2016</span>
+        </div>
+      </footer>
+
+    </div>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script>
+      var lat = 0;
+      var lon = 0;
+
+      navigator.geolocation.getCurrentPosition(function(position) {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+
+        console.log(lat);
+        console.log(lon);
+
+        map = new google.maps.Map(document.querySelector('.mapDiv'), {
+          center: { lat: lat, lng: lon},
+          zoom: 12
+          });
+
+        var marker = new google.maps.Marker({ position: { lat: 34.747874, lng: -92.264993}, map: map, title: 'The Iron Yard' });
+
+        var infoWindow = new google.maps.InfoWindow({ content: `<h1>The Iron Yard</h1>` });
+
+        marker.addListener('click',
+          function() {
+            if (infoWindow.getMap()) {
+              infoWindow.close();
+            }
+            else {
+              infoWindow.open(map, marker);
+            }
+          });
+      });
+    </script>
   </body>
 </html>

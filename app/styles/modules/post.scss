@@ -1,0 +1,50 @@
+.post {
+
+  background-color: white;
+  border-radius: 8px;
+  margin: 20px 0 0;
+
+  @media screen and (min-width: 650px) {
+    width: calc(70% - 2%);
+    margin-right: 2%;
+    float: left;
+  }
+
+  .container {
+    width: 94%;
+  }
+
+  &--title {
+    margin: 0;
+    font-size: 1.8rem;
+    padding: 10px 0;
+  }
+
+  &--info {
+    margin:  10px 0;
+    padding: 0;
+    font-size: .9rem;
+    font-weight: normal;
+
+    &-seperator {
+      font-style: italic;
+    }
+
+    &-category {
+      text-decoration: none;
+
+    }
+  }
+
+  &--image {
+    width: 100%;
+  }
+
+  &--content {
+    font-size: .9rem;
+    line-height: 1.5;
+    font-weight: 400;
+    padding: 0 0 20px;
+  }
+
+}

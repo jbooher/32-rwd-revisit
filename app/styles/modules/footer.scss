@@ -1,0 +1,14 @@
+footer {
+  color: #fff;
+  text-shadow: 1px 1px 1px #666;
+  font-weight: 200;
+  clear: both;
+
+  @media screen and (min-width: 650px) {
+    padding: 10px 0 0;
+  }
+
+  .container {
+    margin: 20px 0 30px;
+  }
+}

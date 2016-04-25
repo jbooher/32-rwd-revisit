@@ -1,0 +1,28 @@
+.sidebar {
+  margin: 20px 0 0;
+  background-color: white;
+  border-radius: 8px;
+
+  @media screen and (min-width: 650px) {
+    width: 30%;
+    float: left;
+  }
+
+  .container {
+    padding: 10px 0 20px;
+  }
+
+  &--title {
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  &--option {
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+
+    span {
+      color: #666;
+    }
+  }
+}
